@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/modal_goods_operation_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/modal_goods_operation_height"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom|center_horizontal"
+    android:layout_marginLeft="@dimen/modal_goods_count_margin_left_right"
+    android:layout_marginRight="@dimen/modal_goods_count_margin_left_right"
+    android:layout_marginBottom="@dimen/modal_goods_operation_margin_bottom"
+    android:background="@drawable/modal_goods_dim_bg" >
+    <Button 
+        android:id="@+id/modal_wait_button"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/modal_goods_operation_text_wait"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="#00000000"/>
+    
+    <View 
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:background="#22000000"/>
+    <Button 
+        android:id="@+id/modal_cancle_button"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:text="@string/modal_goods_operation_text_cancle"
+        android:textColor="#FFFFFF"
+        android:background="#00000000"/>
+</LinearLayout>

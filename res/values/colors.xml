@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="slidingmenu_bg">#3B3B3B</color>
+    <color name="slidingmenu_title_bg">#484848</color>
+    <color name="slidingmenu_btn">#999999</color>
+    <color name="bright_blue">#3BB9EB</color>
+    <color name="gray">#EFEFEF</color>
+    <color name="light_black">#CCCCCC</color>
+    <color name="light_black_two">#ABABAB</color>
+    <color name="orange">#FF9934</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_cover">#25000000</color>
+    <color name="white">#FFFFFF</color>
+    <!-- 白色 -->
+    <color name="ivory">#FFFFF0</color>
+    <!-- 象牙色 -->
+    <color name="lightyellow">#FFFFE0</color>
+    <!-- 亮黄色 -->
+    <color name="yellow">#FFFF00</color>
+    <!-- 海军色 -->
+    <color name="black">#000000</color>
+    <!-- 黑色 -->
+       <!-- 浮动选择面板 -->
+    <color name="modal_bg">#CC000000</color>
+    <color name="modal_info_frame_bg">#F3A41D</color>
+    <color name="modal_info_frame_price">#FFFFFF</color>
+    <color name="modal_goods_bright_bg">#AAFF8800</color>
+    <color name="modal_goods_dim_bg">#77000000</color>
+
+</resources>

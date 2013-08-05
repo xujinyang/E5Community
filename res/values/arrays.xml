@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="vagetable_category">
+        <item >蔬菜</item>
+        <item >水果</item>
+        <item >肉类</item>
+        <item >水产</item>
+    </string-array>
+    <string-array name="area_category">
+        <item >地域</item>
+        <item >沧浪</item>
+        <item >相城</item>
+        <item >平江</item>
+        <item >工业园</item>
+        <item >吴中</item>
+        <item >昆山</item>
+        <item >常熟</item>
+        <item >张家港</item>
+        <item >太仓</item>
+        <item >吴江</item>
+        <item >高新区</item>
+    </string-array>
+    <string-array name="price_category">
+        <item >价格</item>
+        <item >不限</item>
+        <item >50以下</item>
+        <item >100-200元</item>
+        <item >200-500元</item>
+        <item >500-1000元</item>
+        <item >1000以上</item>
+    </string-array>
+</resources>

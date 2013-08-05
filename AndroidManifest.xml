@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gaobo.e5community"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Sherlock.__Theme.DarkActionBar" >
+        <activity
+            android:name="com.gaobo.e5community.ui.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.gaobo.e5community.ui.LocationActivity" />
+        <activity android:name="com.gaobo.e5community.ui.SettingsActivity" />
+        <activity android:name="com.gaobo.e5community.ui.UserProfileActivity" />
+        <activity android:name="com.gaobo.e5community.ui.LoginActivity" />
+        <activity android:name="com.gaobo.e5community.ui.RegisterActivity" />
+        <activity
+            android:name="com.gaobo.e5community.fragmentActivity.VagetableActivity"/>
+        <activity android:name="com.gaobo.e5community.fragmentActivity.VagetableDetailActivity" />
+        <activity android:name="com.gaobo.e5community.fragmentActivity.GoodsDetailActivity" />
+        <activity android:name="com.gaobo.e5community.fragmentActivity.RentalInfoActivity" />
+    </application>
+</manifest>

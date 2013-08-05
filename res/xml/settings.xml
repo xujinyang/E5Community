@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/settings_display_title" >
+        <CheckBoxPreference
+            android:key="pref_no_image_mode"
+            android:summary="@string/no_image_summary"
+            android:title="@string/no_image_title" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_function_title" >
+        <Preference
+            android:key="pref_clear_cache"
+            android:title="@string/clear_cache" >
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_reply_title" >
+        <Preference
+            android:key="pref_reply"
+            android:title="@string/reply" >
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_other_title" >
+        <Preference
+            android:key="pref_about"
+            android:title="开发组" >
+        </Preference>
+        <Preference
+            android:key="pref_update_app"
+            android:title="@string/update_app" >
+        </Preference>
+        <Preference
+            android:key="pref_copyright"
+            android:title="@string/copyright_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

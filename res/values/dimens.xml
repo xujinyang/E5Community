@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="slidingmenu_offset">80dp</dimen>
+    <dimen name="slidingmenu_btn_height">56dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+     <dimen name="navbar_height">48dp</dimen>
+    <!-- 左边抽屉 -->
+    <dimen name="main_group_textsize">20dp</dimen>
+    <dimen name="secondary_group_textsize">25dp</dimen>
+    <!-- 右抽屉 -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- 搜索位置 -->
+    <dimen name="search_margin_left_big">40dp</dimen>
+    <dimen name="search_margin_left">10dp</dimen>
+    <dimen name="search_big_textsize">22dp</dimen>
+    <dimen name="search_middle_textsize">17dp</dimen>
+    <dimen name="search_little_textsize">14dp</dimen>
+    <!-- 详情页 -->
+    <dimen name="detail_one_textsize">13dp</dimen>
+    <dimen name="detail_two_textsize">18dp</dimen>
+    <dimen name="detail_three_textsize">22dp</dimen>
+    <dimen name="detail_four_textsize">25dp</dimen>
+ <!-- 浮动面板 -->
+    <dimen name="modal_margin_top_bottom">20dp</dimen>
+    <dimen name="modal_margin_left_right">30dp</dimen>
+    <dimen name="modal_info_frame_height">60dp</dimen>
+    <dimen name="modal_info_frame_name_text_size">20sp</dimen>
+    
+    <dimen name="modal_goods_count_height">60dp</dimen>
+    <dimen name="modal_goods_count_margin_left_right">60dp</dimen>
+    <dimen name="modal_goods_count_margin_top">20dp</dimen>
+    <dimen name="modal_goods_count_goods_num">30sp</dimen>
+    
+    <dimen name="modal_goods_operation_height">40dp</dimen>
+    <dimen name="modal_goods_operation_margin_bottom">20dp</dimen></resources>
