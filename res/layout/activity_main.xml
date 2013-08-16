@@ -8,7 +8,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/btn_rentalInfo"
@@ -77,26 +79,15 @@
             android:spacing="1dip"
             android:unselectedAlpha="1" >
         </com.gaobo.e5community.ui.widget.GuideGallery>
-<!-- 
-        <TextView
-            android:id="@+id/txt_gallerytitle"
-            android:layout_width="fill_parent"
-            android:layout_height="25dp"
-            android:layout_below="@+id/image_wall_gallery"
-            android:background="#cccccc"
-            android:gravity="center_horizontal"
-            android:text="恋嘉传媒有限公司"
-            android:textColor="@color/black" >
-        </TextView>
- -->
+
         <LinearLayout
             android:id="@+id/gallery_point_linear"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@id/image_wall_gallery"
-            android:gravity="center"
             android:background="@color/transparent"
+            android:gravity="center"
             android:orientation="horizontal" >
         </LinearLayout>
     </RelativeLayout>
@@ -104,7 +95,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -123,16 +114,17 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_pin_vagetable" />
+                    android:layout_width="@dimen/category_logo_size"
+                    android:layout_height="@dimen/category_logo_size"
+                    android:src="@drawable/selector_pin_vagetable" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:text="@string/VegetableMarket"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/category_logoText_size" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,16 +137,17 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_pin_goods" />
+                    android:layout_width="@dimen/category_logo_size"
+                    android:layout_height="@dimen/category_logo_size"
+                    android:src="@drawable/selector_pin_goods" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:text="@string/GoodsMarket"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/category_logoText_size" />
             </LinearLayout>
         </LinearLayout>
 
@@ -175,16 +168,17 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_pin_community" />
+                    android:layout_width="@dimen/category_logo_size"
+                    android:layout_height="@dimen/category_logo_size"
+                    android:src="@drawable/selector_pin_service" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:text="@string/CommunityServics"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/category_logoText_size" />
             </LinearLayout>
 
             <LinearLayout
@@ -197,16 +191,17 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_pin_market" />
+                    android:layout_width="@dimen/category_logo_size"
+                    android:layout_height="@dimen/category_logo_size"
+                    android:src="@drawable/selector_pin_market" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:text="@string/NearMarket"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/category_logoText_size" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

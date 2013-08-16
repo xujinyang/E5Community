@@ -1,17 +1,22 @@
 package com.gaobo.e5community.fragmentActivity;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.gaobo.e5community.R;
 
 @SuppressLint("NewApi")
-public class RentalInfoActivity extends FragmentActivity {
+public class RentalInfoActivity extends SherlockFragmentActivity {
 	private static final String TABINDEX = "tab_index";
 	private static ActionBar mActionBar;
 	private Bundle bundle;
@@ -21,9 +26,8 @@ public class RentalInfoActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setActionBar();
 	}
-
 	private void setActionBar() {
-		mActionBar = getActionBar();
+		mActionBar = getSupportActionBar();
 		mActionBar.setTitle(getResources().getString(R.string.retalInfo));
 		mActionBar.setDisplayHomeAsUpEnabled(true);
 		mActionBar.setDisplayShowHomeEnabled(true);
@@ -32,14 +36,14 @@ public class RentalInfoActivity extends FragmentActivity {
 				.newTab()
 				.setText(R.string.rent_out)
 				.setTabListener(
-						new MyTabListener<RentalInfoFragment>(this, "rent_out",
+						new MyTabListener<RentalInfoFragment>("rent_out",
 								RentalInfoFragment.class)));
 
 		mActionBar.addTab(mActionBar
 				.newTab()
 				.setText(R.string.rent_in)
 				.setTabListener(
-						new MyTabListener<RentalInfoFragment>(this, "rent_in",
+						new MyTabListener<RentalInfoFragment>("rent_in",
 								RentalInfoFragment.class)));
 		// 实例化bundle
 		bundle = new Bundle();
@@ -50,7 +54,7 @@ public class RentalInfoActivity extends FragmentActivity {
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		bundle = outState;
-		bundle.putInt(TABINDEX, getActionBar().getSelectedNavigationIndex());
+		bundle.putInt(TABINDEX, getSupportActionBar().getSelectedNavigationIndex());
 	}
 
 	// 恢复TabIndex
@@ -59,48 +63,45 @@ public class RentalInfoActivity extends FragmentActivity {
 		super.onRestoreInstanceState(savedInstanceState);
 		bundle = savedInstanceState;
 		if (bundle.containsKey(TABINDEX))
-			getActionBar().setSelectedNavigationItem(bundle.getInt(TABINDEX));
+			 getSupportActionBar().setSelectedNavigationItem(bundle.getInt(TABINDEX));
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		bundle.putInt(TABINDEX, getActionBar().getSelectedNavigationIndex());
+		bundle.putInt(TABINDEX, getSupportActionBar().getSelectedNavigationIndex());
 	}
 
-	@SuppressLint("NewApi")
-	public static class MyTabListener<T extends Fragment> implements
-			ActionBar.TabListener {
+	public class MyTabListener<T extends Fragment> implements
+			com.actionbarsherlock.app.ActionBar.TabListener {
 
-		private final Activity mActivity;
 		private final String mTag;
 		private final Class<T> mClass;
 		private final Bundle mArgs;
 		private Fragment mFragment;
 
-		public MyTabListener(Activity activity, String tag, Class<T> clz) {
-			this(activity, tag, clz, null);
+		public MyTabListener(String tag, Class<T> clz) {
+			this(getSupportFragmentManager(), tag, clz, null);
 		}
 
-		public MyTabListener(Activity activity, String tag, Class<T> clz,
+		public MyTabListener(FragmentManager fm, String tag, Class<T> clz,
 				Bundle args) {
-			mActivity = activity;
 			mTag = tag;
 			mClass = clz;
 			mArgs = args;
-			mFragment = mActivity.getFragmentManager().findFragmentByTag(mTag);
+			mFragment = fm.findFragmentByTag(mTag);
 			if (mFragment != null && !mFragment.isDetached()) {
-				FragmentTransaction ft = mActivity.getFragmentManager()
-						.beginTransaction();
+				FragmentTransaction ft = fm.beginTransaction();
 				ft.detach(mFragment);
 				ft.commit();
 			}
 		}
 
-		public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		public void onTabSelected(com.actionbarsherlock.app.ActionBar.Tab tab,
+				FragmentTransaction ft) {
 			if (mFragment == null) {
-				mFragment = Fragment.instantiate(mActivity, mClass.getName(),
-						mArgs);
+				mFragment = Fragment.instantiate(RentalInfoActivity.this,
+						mClass.getName(), mArgs);
 				ft.add(android.R.id.content, mFragment, mTag);
 			} else {
 				ft.attach(mFragment);
@@ -108,24 +109,28 @@ public class RentalInfoActivity extends FragmentActivity {
 
 		}
 
-		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		public void onTabUnselected(
+				com.actionbarsherlock.app.ActionBar.Tab tab,
+				FragmentTransaction ft) {
 			if (mFragment != null) {
 				ft.detach(mFragment);
 			}
 		}
 
-		public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		public void onTabReselected(
+				com.actionbarsherlock.app.ActionBar.Tab tab,
+				FragmentTransaction ft) {
 		}
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(android.view.Menu menu) {
-		getMenuInflater().inflate(R.menu.other, menu);
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getSupportMenuInflater().inflate(R.menu.other, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
-	public boolean onMenuItemSelected(int featureId, android.view.MenuItem item) {
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			finish();
@@ -136,5 +141,4 @@ public class RentalInfoActivity extends FragmentActivity {
 		}
 		return super.onMenuItemSelected(featureId, item);
 	}
-
 }

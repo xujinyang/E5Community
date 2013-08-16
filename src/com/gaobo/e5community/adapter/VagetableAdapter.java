@@ -7,12 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gaobo.e5community.R;
 import com.gaobo.e5community.model.Vagetable;
-import com.gaobo.e5community.util.photo.ImageLoader;
+import com.loopj.android.image.SmartImageView;
 
 /**
  * 菜市场的页面列表adapter
@@ -23,13 +22,11 @@ import com.gaobo.e5community.util.photo.ImageLoader;
 public class VagetableAdapter extends BaseAdapter {
 	private Context context;
 	private ArrayList<Vagetable> vagetableArrayList;
-	public ImageLoader imageLoader;
 
 	public VagetableAdapter(Context context,
 			ArrayList<Vagetable> vagetableArrayList) {
 		this.context = context;
 		this.vagetableArrayList = vagetableArrayList;
-		imageLoader = new ImageLoader(context);
 	}
 
 	@Override
@@ -52,11 +49,11 @@ public class VagetableAdapter extends BaseAdapter {
 		VagetableHolder holder;
 		if (convertView == null) {
 			convertView = LayoutInflater.from(context).inflate(
-					R.layout.fragment_vagetablemarket_item, null);
+					R.layout.activity_vagetable_list_item, null);
 			holder = new VagetableHolder();
 			holder.name = (TextView) convertView
 					.findViewById(R.id.vagetable_name);
-			holder.image = (ImageView) convertView
+			holder.image = (SmartImageView) convertView
 					.findViewById(R.id.vagetable_image);
 			holder.price = (TextView) convertView
 					.findViewById(R.id.vagetable_price);
@@ -65,15 +62,14 @@ public class VagetableAdapter extends BaseAdapter {
 			holder = (VagetableHolder) convertView.getTag();
 		}
 		holder.name.setText(vagetableArrayList.get(arg0).getName());
-		imageLoader.DisplayImage(vagetableArrayList.get(arg0).getImage(),
-				holder.image);
+		holder.image.setImageUrl(vagetableArrayList.get(arg0).getPath());
 		holder.price.setText(vagetableArrayList.get(arg0).getPrice() + "元/斤");
 		return convertView;
 	}
-	
+
 	public class VagetableHolder {
 		private TextView name;
 		private TextView price;
-		private ImageView image;
+		private SmartImageView image;
 	}
 }

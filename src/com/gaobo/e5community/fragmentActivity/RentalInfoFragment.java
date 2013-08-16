@@ -3,7 +3,6 @@ package com.gaobo.e5community.fragmentActivity;
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateUtils;
@@ -14,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.gaobo.e5community.R;
 import com.gaobo.e5community.adapter.GoodsAdapter;
 import com.gaobo.e5community.model.Goods;
@@ -30,7 +30,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
  * 
  */
 @SuppressLint("NewApi")
-public class RentalInfoFragment extends Fragment {
+public class RentalInfoFragment extends SherlockFragment {
 	/*
 	 * 全局变量
 	 */
@@ -46,12 +46,12 @@ public class RentalInfoFragment extends Fragment {
 
 	public RentalInfoFragment() {
 	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getActivity().getActionBar()
-				.setTitle("日用百货");
 	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

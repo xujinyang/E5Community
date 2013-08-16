@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/modal_goods_operation_height"
     android:orientation="horizontal"
+    android:layout_alignTop="@id/modal_out"
+    android:layout_below="@id/modal_goods_price"
     android:layout_gravity="bottom|center_horizontal"
-    android:layout_marginLeft="@dimen/modal_goods_count_margin_left_right"
-    android:layout_marginRight="@dimen/modal_goods_count_margin_left_right"
+    android:layout_marginLeft="80dp"
+    android:layout_marginRight="80dp"
     android:layout_marginBottom="@dimen/modal_goods_operation_margin_bottom"
     android:background="@drawable/modal_goods_dim_bg" >
     <Button 
@@ -18,7 +20,6 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:background="#00000000"/>
-    
     <View 
         android:layout_width="1dp"
         android:layout_height="30dp"

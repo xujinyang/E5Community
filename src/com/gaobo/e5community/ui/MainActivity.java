@@ -58,6 +58,11 @@ public class MainActivity extends SlidingFragmentActivity implements
 	private TextView mTv_location;
 	private Button mBtn_settings;
 	private Button mBtn_exit;
+	private LinearLayout mLv_sentRental;
+	private LinearLayout mLv_sentSecondHand;
+	private LinearLayout mLv_sentJob;
+	private LinearLayout mLv_sentGroupPurchase;
+
 	/**
 	 * 轮播控件
 	 */
@@ -95,6 +100,7 @@ public class MainActivity extends SlidingFragmentActivity implements
 		mActionBar.setDisplayShowHomeEnabled(true);
 		mActionBar.setTitle("社区");
 	}
+
 	/***
 	 * 设置SlidingMenu和Actionbar
 	 */
@@ -145,6 +151,12 @@ public class MainActivity extends SlidingFragmentActivity implements
 	private void rightSlidingInit() {
 		mIv_headPhoto = (ImageView) findViewById(R.id.iv_headphoto);
 		mTv_location = (TextView) findViewById(R.id.tv_location);
+
+		mLv_sentRental = (LinearLayout) findViewById(R.id.lv_rentalInfo);
+		mLv_sentJob = (LinearLayout) findViewById(R.id.lv_job);
+		mLv_sentGroupPurchase = (LinearLayout) findViewById(R.id.lv_groupPurchase);
+		mLv_sentSecondHand = (LinearLayout) findViewById(R.id.lv_secondHand);
+
 		mBtn_settings = (Button) findViewById(R.id.btn_settings);
 		mBtn_exit = (Button) findViewById(R.id.btn_exit);
 	}
@@ -155,6 +167,12 @@ public class MainActivity extends SlidingFragmentActivity implements
 	private void setRightSgListener() {
 		mIv_headPhoto.setOnClickListener(new OnLvClickListener());
 		mTv_location.setOnClickListener(new OnLvClickListener());
+
+		mLv_sentRental.setOnClickListener(new OnLvClickListener());
+		mLv_sentJob.setOnClickListener(new OnLvClickListener());
+		mLv_sentGroupPurchase.setOnClickListener(new OnLvClickListener());
+		mLv_sentSecondHand.setOnClickListener(new OnLvClickListener());
+
 		mBtn_settings.setOnClickListener(new OnLvClickListener());
 		mBtn_exit.setOnClickListener(new OnLvClickListener());
 	}
@@ -197,6 +215,17 @@ public class MainActivity extends SlidingFragmentActivity implements
 				Intent locationIntent = new Intent(MainActivity.this,
 						LocationActivity.class);
 				startActivity(locationIntent);
+				break;
+			case R.id.lv_job:
+				break;
+			case R.id.lv_rentalInfo:
+				Intent sentRentalIntent = new Intent(MainActivity.this,
+						SentRentalActivity.class);
+				startActivity(sentRentalIntent);
+				break;
+			case R.id.lv_secondHand:
+				break;
+			case R.id.lv_groupPurchase:
 				break;
 			case R.id.btn_settings:
 				Intent settingsIntent = new Intent(MainActivity.this,

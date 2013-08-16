@@ -1,77 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/modal_bg" >
-    <LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:layout_marginTop="@dimen/modal_margin_top_bottom"
-	    android:layout_marginBottom="@dimen/modal_margin_top_bottom"
-	    android:layout_marginLeft="@dimen/modal_margin_left_right"
-	    android:layout_marginRight="@dimen/modal_margin_left_right"
-    	android:background="@drawable/fragment_model_bg"
-	    android:orientation="vertical" >
-    	<FrameLayout 
-    	    android:id="@+id/modal_goods_pic_container"
-    	    android:layout_width="match_parent"
-    	    android:layout_height="0dp"
-    	    android:layout_weight="1">
-    	    <com.loopj.android.image.SmartImageView
-    	        android:id="@+id/modal_goods_pic"
-    	        android:layout_width="match_parent"
-    	        android:layout_height="match_parent"
-    	        android:background="@drawable/fragment_model_img_bg"
-    	        android:scaleType="fitXY"/>
-    	    <include 
-    	        layout="@layout/part_modal_goods_count"/>
-    	    <TextView
-    	        android:id="@+id/tvUnBuy"
-    	        android:layout_width="wrap_content"
-    	        android:layout_height="wrap_content"
-    	        android:layout_gravity="center"
-    	        android:textSize="18sp"
-    	        android:visibility="gone"
-    	        android:textColor="@android:color/darker_gray"
-    	        android:text="此商品为暂不购买"/>
-    	    <include
-    	        layout="@layout/part_modal_goods_operation"
-    	        android:visibility="visible"/>
-    	</FrameLayout>
-		<LinearLayout 
-		    android:layout_width="match_parent"
-		    android:layout_height="@dimen/modal_info_frame_height"
-		    android:orientation="horizontal"
-		    android:gravity="center_vertical"
-		    android:background="@drawable/fragment_model_bg">
-		    <TextView 
-		        android:id="@+id/modal_goods_name"
-		        android:layout_width="0dp"
-		        android:layout_weight="1"
-		        android:layout_height="match_parent"
-		        android:layout_marginLeft="10dp"
-		        android:textSize="@dimen/modal_info_frame_name_text_size"
-		        android:gravity="center_vertical"
-		        android:layout_gravity="left"
-		        android:singleLine="true"
-		        android:focusable="true"
-		        android:marqueeRepeatLimit="marquee_forever"
-		        android:ellipsize="marquee"
-		        android:textColor="#000000"
-		        android:text="糖醋排骨盖浇饭"/>
-		    <TextView 
-		        android:id="@+id/modal_goods_price"
-		        android:layout_width="wrap_content"
-		        android:layout_height="match_parent"
-		        android:layout_marginRight="10dp"
-		        android:layout_gravity="right"
-		        android:singleLine="true"
-		        android:gravity="center_vertical"
-		        android:textSize="@dimen/modal_info_frame_name_text_size"
-		        android:textColor="#000000"
-		        android:text="￥26.00"/>
-		</LinearLayout>
-	</LinearLayout>
+    android:background="@color/modal_bg"
+    android:orientation="vertical" >
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/modal_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp" >
+
+        <View
+            android:id="@+id/modal_goods_top"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#00000000" />
+
+        <RelativeLayout
+            android:id="@+id/modal_goods_pic_container"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/modal_goods_top"
+            android:layout_marginLeft="@dimen/modal_margin_left_right"
+            android:layout_marginRight="@dimen/modal_margin_left_right"
+            android:background="@drawable/fragment_model_bg" >
+
+            <com.loopj.android.image.SmartImageView
+                android:id="@+id/modal_goods_pic"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/fragment_model_img_bg"
+                 android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+            <TextView
+                android:id="@+id/modal_goods_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/modal_goods_pic"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="糖醋排骨盖浇饭"
+                android:textColor="#000000"
+                android:textSize="@dimen/modal_info_frame_name_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/modal_goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/modal_goods_name"
+                android:layout_alignBottom="@+id/modal_goods_name"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="14dp"
+                android:singleLine="true"
+                android:text="￥26.00"
+                android:textColor="#000000"
+                android:textSize="@dimen/modal_info_frame_name_text_size" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/modal_goods_price"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/modal_totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/view1"
+                android:layout_toLeftOf="@id/modal_goods_price"
+                android:gravity="center_vertical"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/search_big_textsize" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/modal_goods_pic_container"
+            android:background="#00000000" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvUnBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="此商品为暂不购买"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <include
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        layout="@layout/part_modal_goods_count"
+        android:visibility="visible" />
+
+</RelativeLayout>

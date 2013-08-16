@@ -8,6 +8,12 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.gaobo.e5community.R;
 
+/**
+ * 用户信息页面
+ * 
+ * @author mobileXu
+ * 
+ */
 public class UserProfileActivity extends SherlockActivity {
 	private ActionBar mActionBar;
 

@@ -53,15 +53,16 @@ public class VagetableDetailActivity extends SherlockActivity {
 		setData();
 		setListener();
 	}
-/**
- * 设置ActionBar
- */
+
+	/**
+	 * 设置ActionBar
+	 */
 	private void setActionBar() {
 		mActionBar = getSupportActionBar();
 		mActionBar.setTitle("菜市场详情");
 		mActionBar.setDisplayHomeAsUpEnabled(true);// 可以点击左上角
 		mActionBar.setDisplayShowTitleEnabled(true);// 可以显示标题
-		mActionBar.setDisplayShowHomeEnabled(false);// 不显示图片
+		mActionBar.setDisplayShowHomeEnabled(true);// 不显示图片
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class VagetableDetailActivity extends SherlockActivity {
 	private void setData() {
 		mTv_name.setText(vagetable.getName());
 		mTv_price.setText(vagetable.getPrice() + "元/坨");
-		mIv_image.setImageUrl(vagetable.getImage());
+		mIv_image.setImageUrl(vagetable.getPath());
 	}
+
 	/**
 	 * 初始化控件
 	 */

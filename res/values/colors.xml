@@ -6,6 +6,8 @@
     <color name="slidingmenu_btn">#999999</color>
     <color name="bright_blue">#3BB9EB</color>
     <color name="gray">#EFEFEF</color>
+    <color name="grey">#A1A1A1</color>
+    <color name="grey_deep">#3B3F45</color>
     <color name="light_black">#CCCCCC</color>
     <color name="light_black_two">#ABABAB</color>
     <color name="orange">#FF9934</color>

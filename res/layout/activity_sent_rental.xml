@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@color/grey_deep"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/iv_rental_img"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/selector_add_picture" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/rental_add_picture"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MyLy_style"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                style="@style/MyTv_style"
+                android:layout_gravity="center_vertical"
+                android:text="@string/rental_title" />
+
+            <EditText
+                android:id="@+id/Ed_community_name"
+                style="@style/MyEv_style"
+                android:layout_gravity="center_vertical" >
+            </EditText>
+
+            <requestFocus />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MyLy_style"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                style="@style/MyTv_style"
+                android:layout_gravity="center_vertical"
+                android:text="@string/community_name" />
+
+            <EditText
+                android:id="@+id/Ed_community_name"
+                style="@style/MyEv_style"
+                android:layout_gravity="center_vertical" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MyLy_style"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" >
+
+            <TextView
+                style="@style/MyTv_style"
+                android:layout_gravity="center_vertical"
+                android:text="@string/rental_adress" />
+
+            <EditText
+                android:id="@+id/Ed_community_name"
+                style="@style/MyEv_style"
+                android:layout_gravity="center_vertical" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MyLy_style"
+            android:layout_width="match_parent"
+             android:layout_marginTop="10dp"
+            android:layout_height="40dp" >
+
+            <TextView
+                style="@style/MyTv_style"
+                android:layout_gravity="center_vertical"
+                android:text="@string/rental_style" />
+
+            <EditText
+                android:id="@+id/Ed_community_name"
+                style="@style/MyEv_style"
+                android:layout_gravity="center_vertical" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MyLy_style"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" >
+
+            <TextView
+                style="@style/MyTv_style"
+                android:layout_gravity="center_vertical"
+                android:text="@string/rental_price" />
+
+            <EditText
+                android:id="@+id/Ed_community_name"
+                style="@style/MyEv_style"
+                android:layout_gravity="center_vertical" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MyLy_style"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                style="@style/MyTv_style"
+                android:layout_gravity="center_vertical"
+                android:text="@string/rental_describe" />
+
+            <EditText
+                android:id="@+id/Ed_community_name"
+                style="@style/MyEv_style"
+                android:layout_gravity="center_vertical" >
+            </EditText>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:text="@string/rental_submit" />
+    </LinearLayout>
+
+</ScrollView>

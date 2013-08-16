@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/slidingmenu_bg"
+    android:background="@drawable/bg_slide"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -48,7 +48,7 @@
     <LinearLayout
         android:id="@+id/lv_divider_one"
         android:layout_width="fill_parent"
-        android:layout_height="3dip"
+        android:layout_height="1dip"
         android:layout_below="@id/lv_userInfo"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/divider_horizontal_textfield"
@@ -70,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
+            android:background="@drawable/selector_rightsm_ly"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -92,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
+            android:background="@drawable/selector_rightsm_ly"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -112,7 +114,7 @@
     <LinearLayout
         android:id="@+id/lv_divider_two"
         android:layout_width="fill_parent"
-        android:layout_height="3dip"
+        android:layout_height="1dip"
         android:layout_below="@id/lv_userSendInfo"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/divider_horizontal_textfield"
@@ -129,6 +131,7 @@
             android:id="@+id/lv_job"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/selector_rightsm_ly"
             android:gravity="center" >
 
             <ImageView
@@ -150,6 +153,7 @@
             android:id="@+id/lv_secondHand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/selector_rightsm_ly"
             android:gravity="center" >
 
             <ImageView
@@ -171,6 +175,7 @@
             android:id="@+id/lv_rentalInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/selector_rightsm_ly"
             android:gravity="center" >
 
             <ImageView
@@ -192,6 +197,7 @@
             android:id="@+id/lv_groupPurchase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/selector_rightsm_ly"
             android:gravity="center" >
 
             <ImageView
@@ -217,20 +223,34 @@
         android:background="@drawable/slidingmenu_item_bg"
         android:orientation="vertical" >
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@android:drawable/divider_horizontal_textfield"
+            android:orientation="vertical" >
+        </LinearLayout>
+
         <Button
             android:id="@+id/btn_settings"
             android:layout_width="match_parent"
             android:layout_height="@dimen/slidingmenu_btn_height"
-            android:background="@drawable/slidingmenu_btn_bg"
+            android:background="@drawable/selector_rightsm_ly"
             android:text="@string/settings"
             android:textColor="@color/slidingmenu_btn"
             android:textSize="16.5sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@android:drawable/divider_horizontal_textfield"
+            android:orientation="vertical" >
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_exit"
             android:layout_width="match_parent"
             android:layout_height="@dimen/slidingmenu_btn_height"
-            android:background="@drawable/slidingmenu_btn_bg"
+            android:background="@drawable/selector_rightsm_ly"
             android:text="@string/exit"
             android:textColor="@color/slidingmenu_btn"
             android:textSize="16.5sp" />

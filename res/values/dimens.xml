@@ -5,7 +5,12 @@
     <dimen name="slidingmenu_btn_height">56dp</dimen>
     <dimen name="list_padding">10dp</dimen>
     <dimen name="shadow_width">15dp</dimen>
-     <dimen name="navbar_height">48dp</dimen>
+    <dimen name="navbar_height">48dp</dimen>
+    <dimen name="navbar_cart_top_height">30dp</dimen>
+    <dimen name="navbar_cart__bottom_height">90dp</dimen>
+    <!-- 主页面 -->
+    <dimen name="category_logo_size">75dp</dimen>
+    <dimen name="category_logoText_size">20sp</dimen>
     <!-- 左边抽屉 -->
     <dimen name="main_group_textsize">20dp</dimen>
     <dimen name="secondary_group_textsize">25dp</dimen>
@@ -23,16 +28,19 @@
     <dimen name="detail_two_textsize">18dp</dimen>
     <dimen name="detail_three_textsize">22dp</dimen>
     <dimen name="detail_four_textsize">25dp</dimen>
- <!-- 浮动面板 -->
+    <!-- 购物车 -->
+    <dimen name="cart_list_item_height">80dp</dimen>
+    
+    <!-- 浮动面板 -->
     <dimen name="modal_margin_top_bottom">20dp</dimen>
     <dimen name="modal_margin_left_right">30dp</dimen>
     <dimen name="modal_info_frame_height">60dp</dimen>
     <dimen name="modal_info_frame_name_text_size">20sp</dimen>
-    
     <dimen name="modal_goods_count_height">60dp</dimen>
     <dimen name="modal_goods_count_margin_left_right">60dp</dimen>
     <dimen name="modal_goods_count_margin_top">20dp</dimen>
     <dimen name="modal_goods_count_goods_num">30sp</dimen>
-    
     <dimen name="modal_goods_operation_height">40dp</dimen>
-    <dimen name="modal_goods_operation_margin_bottom">20dp</dimen></resources>
+    <dimen name="modal_goods_operation_margin_bottom">20dp</dimen>
+
+</resources>

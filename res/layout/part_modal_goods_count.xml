@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/modal_goods_count_height"
     android:orientation="horizontal"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp"
-    android:layout_marginTop="@dimen/modal_goods_count_margin_top"
+    android:layout_marginLeft="60dp"
+    android:layout_marginRight="60dp"
+   	android:layout_alignBottom="@id/modal_out"
     android:background="@drawable/modal_goods_bright_bg" >
+    
     <ImageButton 
         android:id="@+id/modal_minus_button"
         android:layout_width="0dp"

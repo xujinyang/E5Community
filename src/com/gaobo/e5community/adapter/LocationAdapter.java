@@ -2,16 +2,15 @@ package com.gaobo.e5community.adapter;
 
 import java.util.ArrayList;
 
-import com.gaobo.e5community.R;
-import com.gaobo.e5community.model.Community;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.TextView;
+
+import com.gaobo.e5community.R;
+import com.gaobo.e5community.model.Community;
 
 /**
  * 定位页面位置列表的Adapter

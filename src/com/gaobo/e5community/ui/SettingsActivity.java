@@ -11,7 +11,11 @@ import com.actionbarsherlock.view.MenuItem;
 import com.gaobo.e5community.R;
 import com.gaobo.e5community.util.CommonMethod;
 import com.gaobo.e5community.util.photo.FileCache;
-
+/**
+ * 设置界面
+ * @author mobileXu
+ *
+ */
 public class SettingsActivity extends SherlockPreferenceActivity {
 	private ActionBar mActionBar;
 	private Preference pref_clear_cache;

@@ -12,7 +12,11 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.gaobo.e5community.R;
-
+/**
+ * 注册页面
+ * @author 
+ *
+ */
 public class RegisterActivity extends SherlockActivity {
 	private EditText mEd_register_name;
 	private EditText mEd_register_pwd;

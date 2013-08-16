@@ -136,10 +136,10 @@ public final class R {
 		public static final int abs__bright_foreground_disabled_holo_light = 0x7f080005;
 		public static final int abs__bright_foreground_holo_dark = 0x7f080002;
 		public static final int abs__bright_foreground_holo_light = 0x7f080003;
-		public static final int abs__primary_text_disable_only_holo_dark = 0x7f08001a;
-		public static final int abs__primary_text_disable_only_holo_light = 0x7f08001b;
-		public static final int abs__primary_text_holo_dark = 0x7f08001c;
-		public static final int abs__primary_text_holo_light = 0x7f08001d;
+		public static final int abs__primary_text_disable_only_holo_dark = 0x7f08001c;
+		public static final int abs__primary_text_disable_only_holo_light = 0x7f08001d;
+		public static final int abs__primary_text_holo_dark = 0x7f08001e;
+		public static final int abs__primary_text_holo_light = 0x7f08001f;
 	}
 	public static final class dimen {
 		public static final int abs__action_bar_default_height = 0x7f090001;
@@ -325,7 +325,7 @@ public final class R {
 		public static final int showCustom = 0x7f060008;
 		public static final int showHome = 0x7f060005;
 		public static final int showTitle = 0x7f060007;
-		public static final int slidingmenumain = 0x7f06008e;
+		public static final int slidingmenumain = 0x7f06009f;
 		public static final int tabMode = 0x7f060003;
 		public static final int useLogo = 0x7f060004;
 		public static final int wrap_content = 0x7f060000;
@@ -355,9 +355,9 @@ public final class R {
 		public static final int abs__search_dropdown_item_icons_2line = 0x7f030012;
 		public static final int abs__search_view = 0x7f030013;
 		public static final int abs__simple_dropdown_hint = 0x7f030014;
-		public static final int sherlock_spinner_dropdown_item = 0x7f03002a;
-		public static final int sherlock_spinner_item = 0x7f03002b;
-		public static final int slidingmenumain = 0x7f03002d;
+		public static final int sherlock_spinner_dropdown_item = 0x7f030031;
+		public static final int sherlock_spinner_item = 0x7f030032;
+		public static final int slidingmenumain = 0x7f030034;
 	}
 	public static final class string {
 		public static final int abs__action_bar_home_description = 0x7f0b0000;
