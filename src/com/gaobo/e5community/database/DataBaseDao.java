@@ -1,6 +1,5 @@
 package com.gaobo.e5community.database;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -60,6 +59,7 @@ public class DataBaseDao {
 	 */
 	public void addGoods(Shopping goods) {
 		if (isExistNativeGoods(goods)) {
+			System.out.println("已经存在了" + goods.getName());
 			updateGoodsAll(goods);
 			return;
 		}
@@ -77,7 +77,7 @@ public class DataBaseDao {
 		cv.put(ISPAY, goods.getIsPay());
 		cv.put(TEL, goods.getTel());
 		long row = db.insert(NATIVE_GOODS_TABLE, null, cv);
-		System.out.println("加入了一条数据"+goods.getName());
+		System.out.println("加入了一条数据" + goods.getName());
 		db.close();
 	}
 
@@ -168,9 +168,26 @@ public class DataBaseDao {
 		cv.put(COUNT, goods.getCount());
 		cv.put(ISPAY, goods.getIsPay());
 		cv.put(TEL, goods.getTel());
-		long row = db.insert(NATIVE_GOODS_TABLE, null, cv);
 		String[] args = { String.valueOf(goods.getGoods_id()) };
 		return db.update(NATIVE_GOODS_TABLE, cv, GOODS_ID + "=?", args);
+	}
+
+	/**
+	 * 获取购物车餐品的数量
+	 * 
+	 * @param context
+	 * @return
+	 */
+	public boolean isSelectedGoods(int id) {
+		SQLiteDatabase db = getBaseHelper().getWritableDatabase();
+		Cursor c = db.query(NATIVE_GOODS_TABLE,
+				new String[] { AppContants.KEY.GOODS_SELECTED }, GOODS_ID
+						+ "=?", new String[] { String.valueOf(id) }, null,
+				null, null, null);
+		if (c.moveToNext()) {
+			return c.getInt(0) == 1 ? true : false;
+		}
+		return true;
 	}
 
 	/**
@@ -225,20 +242,106 @@ public class DataBaseDao {
 	}
 
 	/**
-	 * 获取购物车餐品的数量
+	 * 修改购物车里面商品个数，加一个商品
 	 * 
-	 * @param context
+	 * @param id2
+	 */
+	public void PlusCount(Shopping s) {
+		SQLiteDatabase db = getBaseHelper().getWritableDatabase();
+		String sql = "Update shopping set count=" + s.getCount()
+				+ " where goods_id=" + s.getGoods_id() + ";";
+		Cursor cursor = db.rawQuery(sql, null);
+		if (cursor.isClosed() != true) {
+			cursor.close();
+		}
+		if (db.isOpen() == true) {
+			db.close();
+		}
+		System.out.println("修改购物车里面商品个数，加一个商品" + s.getName());
+	}
+
+	/**
+	 * 修改购物车里面商品个数，减一个商品
+	 * 
+	 * @param id2
+	 */
+	public void MinusCount(Shopping s) {
+		SQLiteDatabase db = getBaseHelper().getWritableDatabase();
+		String sql = "Update shopping set count=" + s.getCount()
+				+ " where goods_id=" + s.getGoods_id() + ";";
+		Cursor cursor = db.rawQuery(sql, null);
+		if (cursor.isClosed() != true) {
+			cursor.close();
+		}
+		if (db.isOpen() == true) {
+			db.close();
+		}
+		System.out.println("修改购物车里面商品个数，减一个商品" + s.getCount());
+	}
+
+	/**
+	 * 获得购物车总数
+	 * 
 	 * @return
 	 */
-	public int getGoodsCount(Context context) {
-		SQLiteDatabase db = getBaseHelper().getWritableDatabase();
-		Cursor c = db.query(NATIVE_GOODS_TABLE, null, null, null, null, null,
-				null);
-		if (c == null || c.getCount() <= 0) {
-			return 0;
-		} else {
-			return c.getCount();
+	public int getCartTotalCount() {
+		SQLiteDatabase db = getBaseHelper().getReadableDatabase();
+		Cursor cursor = db.query(NATIVE_GOODS_TABLE, null, null, null, null,
+				null, "_id desc");
+		int totalCount = 0;
+		while (cursor.moveToNext()) {
+			int count = cursor.getInt(cursor.getColumnIndex(COUNT));
+			if (count > 0) {
+				totalCount += count;
+			}
 		}
+		if (!cursor.isClosed()) {
+			cursor.close();
+		}
+		db.close();
+		System.out.println("购物车里面总数" + totalCount);
+		return totalCount;
+	}
+
+	/**
+	 * 获得购物车里面总价格
+	 */
+	public float getCartTotalPrice() {
+		SQLiteDatabase db = getBaseHelper().getReadableDatabase();
+		Cursor cursor = db.query(NATIVE_GOODS_TABLE, null, null, null, null,
+				null, "_id desc");
+		float totalprice = 0;
+		while (cursor.moveToNext()) {
+			int count = cursor.getInt(cursor.getColumnIndex(COUNT));
+			if (count > 0) {
+				float price = 0;
+				price = cursor.getFloat(cursor.getColumnIndex(PRICE));
+				totalprice = totalprice + count * price;
+			}
+		}
+		if (!cursor.isClosed()) {
+			cursor.close();
+		}
+		db.close();
+		System.out.println("购物车里面总价格" + totalprice);
+		return totalprice;
+	}
+
+	/**
+	 * 获得电话号码
+	 */
+	public String getCommunityTel() {
+		SQLiteDatabase db = getBaseHelper().getReadableDatabase();
+		Cursor cursor = db.query(NATIVE_GOODS_TABLE, null, null, null, null,
+				null, "_id desc");
+		while (cursor.moveToNext()) {
+			String tel = cursor.getString(cursor.getColumnIndex(TEL));
+		}
+		if (!cursor.isClosed()) {
+			cursor.close();
+		}
+		db.close();
+		return null;
 	}
 
 	/**
@@ -247,15 +350,23 @@ public class DataBaseDao {
 	 * @param context
 	 * @return
 	 */
-	public boolean isSelectedGoods(Context context, int id) {
-		SQLiteDatabase db = getBaseHelper().getWritableDatabase();
-		Cursor c = db.query(NATIVE_GOODS_TABLE,
-				new String[] { AppContants.KEY.GOODS_SELECTED }, GOODS_ID
-						+ "=?", new String[] { String.valueOf(id) }, null,
-				null, null, null);
-		if (c.moveToNext()) {
-			return c.getInt(0) == 1 ? true : false;
+	public int getGoodsCount(int id) {
+		SQLiteDatabase db = getBaseHelper().getReadableDatabase();
+		Cursor c = db.query(NATIVE_GOODS_TABLE, null, GOODS_ID + "=?",
+				new String[] { String.valueOf(id) }, null, null, null);
+		if (c == null || c.getCount() <= 0) {
+			return 0;
+		} else {
+			c.moveToFirst();
+			int count = c.getInt(c.getColumnIndex(COUNT));
+			if (c.isClosed() != true) {
+				c.close();
+			}
+			if (db.isOpen() == true) {
+				db.close();
+			}
+			return count;
 		}
-		return true;
 	}
+
 }

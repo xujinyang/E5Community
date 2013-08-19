@@ -1,15 +1,21 @@
 package com.gaobo.e5community.model;
 
-public class Service {
+import java.io.Serializable;
+
+public class Service implements Serializable {
 	private int id;// 自身id
-	private int categoryId;// 类别id
+	private int category_Id;// 类别id
+	private int community_id;// 社区id
+	private int market_id;// 商家id
+	private int alias; // 表类别 ：1菜市场 2日用百货
 	private String name;// 名称
 	private float price;// 价格
-	private String image;// 图片
-	private int cid;// 所属社区ID
-	private String describe;// 描述
+	private String path;// 图片
+	private String content;// 描述
 	private String create_at;// 发布时间
+	private String update_at;// 发布时间
 	private int is_enable;// 是否下架
+	private String tel;
 
 	public int getId() {
 		return id;
@@ -19,12 +25,36 @@ public class Service {
 		this.id = id;
 	}
 
-	public int getCategoryId() {
-		return categoryId;
+	public int getCategory_Id() {
+		return category_Id;
 	}
 
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+	public void setCategory_Id(int category_Id) {
+		this.category_Id = category_Id;
+	}
+
+	public int getCommunity_id() {
+		return community_id;
+	}
+
+	public void setCommunity_id(int community_id) {
+		this.community_id = community_id;
+	}
+
+	public int getMarket_id() {
+		return market_id;
+	}
+
+	public void setMarket_id(int market_id) {
+		this.market_id = market_id;
+	}
+
+	public int getAlias() {
+		return alias;
+	}
+
+	public void setAlias(int alias) {
+		this.alias = alias;
 	}
 
 	public String getName() {
@@ -43,28 +73,20 @@ public class Service {
 		this.price = price;
 	}
 
-	public String getImage() {
-		return image;
+	public String getPath() {
+		return path;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setPath(String path) {
+		this.path = path;
 	}
 
-	public int getCid() {
-		return cid;
+	public String getContent() {
+		return content;
 	}
 
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
-
-	public String getDescribe() {
-		return describe;
-	}
-
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getCreate_at() {
@@ -75,6 +97,14 @@ public class Service {
 		this.create_at = create_at;
 	}
 
+	public String getUpdate_at() {
+		return update_at;
+	}
+
+	public void setUpdate_at(String update_at) {
+		this.update_at = update_at;
+	}
+
 	public int getIs_enable() {
 		return is_enable;
 	}
@@ -82,4 +112,13 @@ public class Service {
 	public void setIs_enable(int is_enable) {
 		this.is_enable = is_enable;
 	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
 }

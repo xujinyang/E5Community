@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gaobo.e5community.R;
+import com.gaobo.e5community.database.DataBaseDao;
 import com.gaobo.e5community.model.Goods;
 import com.gaobo.e5community.util.photo.ImageLoader;
+import com.loopj.android.image.SmartImageView;
 
 /**
  * 菜市场的页面列表adapter
@@ -24,12 +26,12 @@ import com.gaobo.e5community.util.photo.ImageLoader;
 public class GoodsAdapter extends BaseAdapter {
 	private Context context;
 	private ArrayList<Goods> goodsArrayList;
-	public ImageLoader imageLoader;
+	private DataBaseDao myDb;
 
 	public GoodsAdapter(Context context, ArrayList<Goods> goodsArrayList) {
 		this.context = context;
 		this.goodsArrayList = goodsArrayList;
-		imageLoader = new ImageLoader(context);
+		myDb = new DataBaseDao(context);
 	}
 
 	@Override
@@ -52,28 +54,36 @@ public class GoodsAdapter extends BaseAdapter {
 		GoodsHolder holder;
 		if (convertView == null) {
 			convertView = LayoutInflater.from(context).inflate(
-					R.layout.fragment_rentalinfo_item, null);
+					R.layout.activity_goods_list_item, null);
 			holder = new GoodsHolder();
 			holder.name = (TextView) convertView
-					.findViewById(R.id.vagetable_name);
-			holder.image = (ImageView) convertView
-					.findViewById(R.id.vagetable_image);
+					.findViewById(R.id.tv_goods_name);
+			holder.image = (SmartImageView) convertView
+					.findViewById(R.id.sv_goods_image);
 			holder.price = (TextView) convertView
-					.findViewById(R.id.vagetable_price);
+					.findViewById(R.id.tv_goods_price);
+			holder.count = (TextView) convertView
+					.findViewById(R.id.tv_goods_cartcount);
 			convertView.setTag(holder);
 		} else {
 			holder = (GoodsHolder) convertView.getTag();
 		}
 		holder.name.setText(goodsArrayList.get(arg0).getName());
-		imageLoader.DisplayImage(goodsArrayList.get(arg0).getImage(),
-				holder.image);
+		holder.image.setImageUrl(goodsArrayList.get(arg0).getPath());
 		holder.price.setText(goodsArrayList.get(arg0).getPrice() + "元/个");
+		int count = 0;
+		count = myDb.getGoodsCount(goodsArrayList.get(arg0).getId());
+		if (count > 0) {
+			holder.count.setVisibility(View.VISIBLE);
+			holder.count.setText(count + "");
+		}
 		return convertView;
 	}
 
 	public class GoodsHolder {
 		private TextView name;
 		private TextView price;
-		private ImageView image;
+		private SmartImageView image;
+		private TextView count;
 	}
 }

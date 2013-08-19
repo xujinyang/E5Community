@@ -14,6 +14,7 @@
     <string name="RentalInformation">租</string>
     <string name="userInfo">用户信息</string>
     <!-- 右边抽屉 -->
+    <string name="mycart">购物车</string>
     <string name="myFav">我的收藏</string>
     <string name="mySend">我的发布</string>
     <string name="SendRentalInfo">发布出租</string>

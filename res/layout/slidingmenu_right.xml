@@ -65,7 +65,29 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:id="@+id/lv_vagetable"
+            android:id="@+id/lv_mycart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rightsm_ly"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_fav" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="@string/mycart"
+                android:textColor="@color/abs__background_holo_light" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -84,29 +106,6 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
                 android:text="@string/mySend"
-                android:textColor="@color/abs__background_holo_light" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lv_goods"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_rightsm_ly"
-            android:gravity="center"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/img_fav" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:text="@string/myFav"
                 android:textColor="@color/abs__background_holo_light" />
         </LinearLayout>
     </LinearLayout>

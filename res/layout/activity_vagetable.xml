@@ -45,9 +45,7 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
     </FrameLayout>
-
     <!-- bottom -->
-
     <include layout="@layout/part_account_bottom_bar" />
 
 </LinearLayout>

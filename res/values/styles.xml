@@ -6,6 +6,14 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    <!-- 主题 -->
+    <style name="E5CommunityTheme" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/blue</item>
+    </style>
 
     <style name="secondary_text_style">
         <item name="android:textColor">@color/abs__background_holo_light</item>
@@ -22,12 +30,14 @@
         <item name="android:paddingLeft">8.0dip</item>
         <item name="android:orientation">horizontal</item>
     </style>
+
     <style name="MyTv_style" parent="@android:style/TextAppearance.DeviceDefault">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/grey</item>
         <item name="android:textSize">15sp</item>
     </style>
+
     <style name="MyEv_style" parent="@android:style/TextAppearance.DeviceDefault">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -37,4 +47,5 @@
         <item name="android:background">@null</item>
         <item name="android:imeOptions">actionNext</item>
     </style>
+
 </resources>

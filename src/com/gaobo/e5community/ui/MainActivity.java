@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +20,10 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.gaobo.e5community.R;
 import com.gaobo.e5community.adapter.GalleryImageAdapter;
+import com.gaobo.e5community.fragmentActivity.GoodsActivity;
+import com.gaobo.e5community.fragmentActivity.NearMarketActivity;
 import com.gaobo.e5community.fragmentActivity.RentalInfoActivity;
+import com.gaobo.e5community.fragmentActivity.ServiceActivity;
 import com.gaobo.e5community.fragmentActivity.VagetableActivity;
 import com.gaobo.e5community.ui.widget.GuideGallery;
 import com.gaobo.e5community.ui.widget.ImageTimerTask;
@@ -58,6 +62,7 @@ public class MainActivity extends SlidingFragmentActivity implements
 	private TextView mTv_location;
 	private Button mBtn_settings;
 	private Button mBtn_exit;
+	private LinearLayout mLv_myCart;
 	private LinearLayout mLv_sentRental;
 	private LinearLayout mLv_sentSecondHand;
 	private LinearLayout mLv_sentJob;
@@ -151,7 +156,8 @@ public class MainActivity extends SlidingFragmentActivity implements
 	private void rightSlidingInit() {
 		mIv_headPhoto = (ImageView) findViewById(R.id.iv_headphoto);
 		mTv_location = (TextView) findViewById(R.id.tv_location);
-
+		
+		mLv_myCart = (LinearLayout) findViewById(R.id.lv_mycart);
 		mLv_sentRental = (LinearLayout) findViewById(R.id.lv_rentalInfo);
 		mLv_sentJob = (LinearLayout) findViewById(R.id.lv_job);
 		mLv_sentGroupPurchase = (LinearLayout) findViewById(R.id.lv_groupPurchase);
@@ -167,7 +173,8 @@ public class MainActivity extends SlidingFragmentActivity implements
 	private void setRightSgListener() {
 		mIv_headPhoto.setOnClickListener(new OnLvClickListener());
 		mTv_location.setOnClickListener(new OnLvClickListener());
-
+		
+		mLv_myCart.setOnClickListener(new OnLvClickListener());
 		mLv_sentRental.setOnClickListener(new OnLvClickListener());
 		mLv_sentJob.setOnClickListener(new OnLvClickListener());
 		mLv_sentGroupPurchase.setOnClickListener(new OnLvClickListener());
@@ -191,9 +198,30 @@ public class MainActivity extends SlidingFragmentActivity implements
 				MainActivity.this.overridePendingTransition(R.anim.input,
 						R.anim.out);
 				break;
+			case R.id.lv_goods:
+				Intent goodsIntent = new Intent(MainActivity.this,
+						GoodsActivity.class);
+				startActivity(goodsIntent);
+				MainActivity.this.overridePendingTransition(R.anim.input,
+						R.anim.out);
+				break;
+			case R.id.lv_community:
+				Intent serviceIntent = new Intent(MainActivity.this,
+						ServiceActivity.class);
+				startActivity(serviceIntent);
+				MainActivity.this.overridePendingTransition(R.anim.input,
+						R.anim.out);
+				break;
+			case R.id.lv_market:
+				Intent nearMarketIntent = new Intent(MainActivity.this,
+						NearMarketActivity.class);
+				startActivity(nearMarketIntent);
+				MainActivity.this.overridePendingTransition(R.anim.input,
+						R.anim.out);
+				break;
 			case R.id.btn_rentalInfo:
-				// mBtn_rentalInfo.setAnimation(AnimationUtils.loadAnimation(
-				// getApplicationContext(), R.anim.input));
+				// mBtn_rentalInfo.startAnimation(AnimationUtils.loadAnimation(
+				// getApplicationContext(), R.anim.scale_btn));
 				Intent rentalInfoIntent = new Intent(MainActivity.this,
 						RentalInfoActivity.class);
 				startActivity(rentalInfoIntent);
@@ -226,6 +254,13 @@ public class MainActivity extends SlidingFragmentActivity implements
 			case R.id.lv_secondHand:
 				break;
 			case R.id.lv_groupPurchase:
+				break;
+			case R.id.lv_mycart:
+				Intent cartIntent = new Intent(MainActivity.this,
+						CartActivity.class);
+				startActivity(cartIntent);
+				MainActivity.this.overridePendingTransition(R.anim.input,
+						R.anim.out);
 				break;
 			case R.id.btn_settings:
 				Intent settingsIntent = new Intent(MainActivity.this,

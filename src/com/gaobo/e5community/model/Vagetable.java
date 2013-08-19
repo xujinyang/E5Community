@@ -1,7 +1,11 @@
 package com.gaobo.e5community.model;
 
 import java.io.Serializable;
-
+/**
+ * 菜市场的实体类
+ * @author MobileXu
+ *
+ */
 public class Vagetable extends BaseGoods implements Serializable {
 	private int id;// 自身id
 	private int category_Id;// 类别id
@@ -16,7 +20,15 @@ public class Vagetable extends BaseGoods implements Serializable {
 	private String update_at;// 发布时间
 	private int is_enable;// 是否下架
 	private String tel;
+	private int count;
 
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
 	public String getTel() {
 		return tel;
 	}

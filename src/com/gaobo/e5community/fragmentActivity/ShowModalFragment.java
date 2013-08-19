@@ -1,13 +1,13 @@
 package com.gaobo.e5community.fragmentActivity;
 
-import android.content.ContentValues;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gaobo.e5community.model.Vagetable;
+import com.gaobo.e5community.model.BaseGoods;
+import com.gaobo.e5community.model.Shopping;
 import com.gaobo.e5community.ui.widget.Modal;
 
 public class ShowModalFragment extends Fragment {
@@ -17,7 +17,7 @@ public class ShowModalFragment extends Fragment {
 	private float mGoodsPrice;
 	private int mGoodsNum;
 	private NotifyDataChangeListener mNotifyNum;
-	private Vagetable vagetable;
+	private BaseGoods goods;
 
 	public interface NotifyDataChangeListener {
 		public void onGoodsNumChanage(int position, int goodsNum);
@@ -42,11 +42,11 @@ public class ShowModalFragment extends Fragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		Bundle bundle = getArguments();
 		mPosition = bundle.getInt("position");
-		vagetable = (Vagetable) bundle.getSerializable("goods");
+		goods = (BaseGoods) bundle.getSerializable("goods");
 		mModal.resetDataAndView();
-		mModal.setGoodsName(vagetable.getName());
-		mModal.setGoodsPrice(vagetable.getPrice());
-		mModal.setImageUrl(vagetable.getPath());
+		mModal.setGoodsName(goods.getName());
+		mModal.setGoodsPrice(goods.getPrice());
+		mModal.setImageUrl(goods.getPath());
 		mModal.setOnMinusButtonClickListener(new Modal.OnMinusButtonClickListener() {
 			@Override
 			public void onClick(int num) {

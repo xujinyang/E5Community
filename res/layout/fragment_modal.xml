@@ -9,6 +9,7 @@
         android:id="@+id/modal_out"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/modal_margin_top_bottom"
         android:layout_centerInParent="true"
         android:layout_marginBottom="20dp" >
 
@@ -17,31 +18,30 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:background="#00000000" />
-
         <RelativeLayout
             android:id="@+id/modal_goods_pic_container"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/modal_goods_top"
             android:layout_marginLeft="@dimen/modal_margin_left_right"
             android:layout_marginRight="@dimen/modal_margin_left_right"
             android:background="@drawable/fragment_model_bg" >
-
             <com.loopj.android.image.SmartImageView
                 android:id="@+id/modal_goods_pic"
-                android:layout_width="280dp"
-                android:layout_height="280dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
                 android:background="@drawable/fragment_model_img_bg"
-                 android:adjustViewBounds="true"
                 android:scaleType="fitXY" />
+
             <TextView
                 android:id="@+id/modal_goods_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
                 android:layout_below="@+id/modal_goods_pic"
+                android:layout_marginLeft="10dp"
                 android:ellipsize="marquee"
                 android:focusable="true"
                 android:gravity="left"

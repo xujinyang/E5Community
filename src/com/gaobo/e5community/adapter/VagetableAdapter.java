@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.gaobo.e5community.R;
+import com.gaobo.e5community.database.DataBaseDao;
 import com.gaobo.e5community.model.Vagetable;
 import com.loopj.android.image.SmartImageView;
 
@@ -22,11 +23,13 @@ import com.loopj.android.image.SmartImageView;
 public class VagetableAdapter extends BaseAdapter {
 	private Context context;
 	private ArrayList<Vagetable> vagetableArrayList;
+	private DataBaseDao myDb;
 
 	public VagetableAdapter(Context context,
 			ArrayList<Vagetable> vagetableArrayList) {
 		this.context = context;
 		this.vagetableArrayList = vagetableArrayList;
+		myDb = new DataBaseDao(context);
 	}
 
 	@Override
@@ -57,12 +60,19 @@ public class VagetableAdapter extends BaseAdapter {
 					.findViewById(R.id.vagetable_image);
 			holder.price = (TextView) convertView
 					.findViewById(R.id.vagetable_price);
+			holder.count=(TextView)convertView.findViewById(R.id.tv_vagetable_select);
 			convertView.setTag(holder);
 		} else {
 			holder = (VagetableHolder) convertView.getTag();
 		}
 		holder.name.setText(vagetableArrayList.get(arg0).getName());
 		holder.image.setImageUrl(vagetableArrayList.get(arg0).getPath());
+		int count = 0;
+		count = myDb.getGoodsCount(vagetableArrayList.get(arg0).getId());
+		if(count>0){
+			holder.count.setVisibility(View.VISIBLE);
+			holder.count.setText(count+"");
+		}
 		holder.price.setText(vagetableArrayList.get(arg0).getPrice() + "元/斤");
 		return convertView;
 	}
@@ -71,5 +81,6 @@ public class VagetableAdapter extends BaseAdapter {
 		private TextView name;
 		private TextView price;
 		private SmartImageView image;
+		private TextView count;
 	}
 }

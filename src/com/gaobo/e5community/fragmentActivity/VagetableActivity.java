@@ -88,6 +88,13 @@ public class VagetableActivity extends SherlockFragmentActivity {
 		initVagetableData();
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		mTvCartsTotalNum.setText(myDb.getCartTotalCount() + "");
+		mTvCartsTotalPrice.setText(+myDb.getCartTotalPrice() + "");
+	}
+
 	private void setCategory() {
 		for (int i = 0; i < 6; i++) {
 			Category c = new Category();
@@ -132,7 +139,8 @@ public class VagetableActivity extends SherlockFragmentActivity {
 			Vagetable v = new Vagetable();
 			v.setName("蔬菜" + i);
 			v.setPrice(5 * i);
-			v.setPath("http://pic16.nipic.com/20110818/2786001_174059683000_2.jpg");
+			v.setId(i);
+			v.setPath("http://pic15.nipic.com/20110701/2889686_173440151631_2.jpg");
 			mAl_vagetable.add(v);
 		}
 		mRv_vagetable.onRefreshComplete();
@@ -222,7 +230,6 @@ public class VagetableActivity extends SherlockFragmentActivity {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
-
 			}
 
 			@Override
@@ -314,10 +321,15 @@ public class VagetableActivity extends SherlockFragmentActivity {
 		ft.commit();
 	}
 
+	public void setItemData(int position, int goodsNum) {
+		mAl_vagetable.get(position).setCount(goodsNum);
+		mAp_vagetable.notifyDataSetChanged();
+	}
+
 	protected void setGoodsNum(int position, int goodsNum) {
-		mTvCartsTotalNum.setText(goodsNum + "");
-		double totalPrice = mAl_vagetable.get(position).getPrice() * goodsNum;
-		mTvCartsTotalPrice.setText(totalPrice + "");
+		setItemData(position, goodsNum);
+		mTvCartsTotalNum.setText(myDb.getCartTotalCount() + "");
+		mTvCartsTotalPrice.setText(myDb.getCartTotalPrice() + "");
 	}
 
 	@Override

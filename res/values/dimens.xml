@@ -30,7 +30,9 @@
     <dimen name="detail_four_textsize">25dp</dimen>
     <!-- 购物车 -->
     <dimen name="cart_list_item_height">80dp</dimen>
-    
+    <!-- item -->
+    <dimen name="item_horizontal_margin">8dp</dimen>
+    <dimen name="item_vertical_margin">8dp</dimen>
     <!-- 浮动面板 -->
     <dimen name="modal_margin_top_bottom">20dp</dimen>
     <dimen name="modal_margin_left_right">30dp</dimen>

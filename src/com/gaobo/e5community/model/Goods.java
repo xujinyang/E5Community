@@ -2,6 +2,12 @@ package com.gaobo.e5community.model;
 
 import java.io.Serializable;
 
+/**
+ * 日用百货实体类
+ * 
+ * @author Administrator
+ * 
+ */
 public class Goods extends BaseGoods implements Serializable {
 	private int id;// 自身id
 	private int category_Id;// 类别id
@@ -10,11 +16,21 @@ public class Goods extends BaseGoods implements Serializable {
 	private int alias; // 表类别 ：1菜市场 2日用百货
 	private String name;// 名称
 	private float price;// 价格
-	private String image;// 图片
+	private String path;// 图片
 	private String content;// 描述
 	private String create_at;// 发布时间
 	private String update_at;// 发布时间
 	private int is_enable;// 是否下架
+	private String tel;
+	private int count;
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
 
 	public int getId() {
 		return id;
@@ -72,12 +88,12 @@ public class Goods extends BaseGoods implements Serializable {
 		this.price = price;
 	}
 
-	public String getImage() {
-		return image;
+	public String getPath() {
+		return path;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	public String getContent() {
@@ -112,4 +128,11 @@ public class Goods extends BaseGoods implements Serializable {
 		this.is_enable = is_enable;
 	}
 
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
 }

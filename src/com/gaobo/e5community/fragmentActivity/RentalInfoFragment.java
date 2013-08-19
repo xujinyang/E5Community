@@ -24,7 +24,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 /**
- * 菜市场的总布局
+ * 出租信息
  * 
  * @author mobileXu
  * 
@@ -75,7 +75,7 @@ public class RentalInfoFragment extends SherlockFragment {
 			Goods g = new Goods();
 			g.setName("鞋子" + i);
 			g.setPrice(3 * i);
-			g.setImage("http://img3.vipshop.com/upload/merchandise/24287/CAMPNO-CAM11005603-2.jpg");
+			g.setPath("http://img3.vipshop.com/upload/merchandise/24287/CAMPNO-CAM11005603-2.jpg");
 			mAl_goods.add(g);
 		}
 		mRv_goods.onRefreshComplete();
@@ -129,12 +129,12 @@ public class RentalInfoFragment extends SherlockFragment {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				Intent intent = new Intent(getActivity(),
-						GoodsDetailActivity.class);
-				Bundle bundle = new Bundle();
-				bundle.putSerializable("goods", mAl_goods.get(arg2));
-				intent.putExtras(bundle);
-				startActivity(intent);
+//				Intent intent = new Intent(getActivity(),
+//						GoodsDetailActivity.class);
+//				Bundle bundle = new Bundle();
+//				bundle.putSerializable("goods", mAl_goods.get(arg2));
+//				intent.putExtras(bundle);
+//				startActivity(intent);
 			}
 		});
 	}
